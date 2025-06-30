@@ -13,7 +13,7 @@ class DataConnector:
     def write_data(self, pd_table: pd.DataFrame):
         pass
         
-class CSVConnector:
+class CSVConnector(DataConnector):
     def __init__(self, path):
         self.path = path
 
@@ -27,7 +27,7 @@ class CSVConnector:
     def write_data(self, df: pd.DataFrame):
         df.to_csv(self.path, index=False)
 
-class ExcelConnector:
+class ExcelConnector(DataConnector):
     def __init__(self, path):
         self.path = path
 

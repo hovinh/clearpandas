@@ -39,5 +39,20 @@ customer_table = (
 
 ![UML Class Diagram](image/uml.png)
 
+## Data Flow Diagram
+
+The pipeline design is structured around four core entities that work together to manage data flow and transformation:
+- **Connector**: Responsible for reading data from and writing data to external sources. It acts as the interface between the pipeline and the outside world (e.g., databases, files, APIs).
+- **Transform**: Handles intermediate data processing. Each transform takes in data, applies a specific transformation logic, and outputs the modified data for the next step.
+- **Dataframe**: Serves as the data container passed between Connectors and Transforms. It represents the input and output at each stage of the pipeline, ensuring consistency and traceability of the data.
+- **Pipeline**: Orchestrates the sequence of connectors and transforms. It defines the overall workflow by chaining these components into a cohesive process, enabling modular and reusable data operations.
+
+As the result, this design advocates operation-centric design, making it easy to build, maintain, and extend data workflows.
+
+
+
+
+![Data Flow Diagram](image/dataflow.png)
+
 ## Contact
 Email: hovinh39@gmail.com
